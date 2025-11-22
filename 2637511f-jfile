@@ -11,7 +11,7 @@ pipeline {
 
   stages{
     // stage S1: release environment ready 
-    stage("${POLITE_ID}-S1"){
+    stage("2637511f-S1"){
       steps {
         echo "${POLITE_ID}-S1: Release environment is ready"
       }
