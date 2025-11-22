@@ -4,8 +4,8 @@ pipeline {
   // define environment variables used through the pipeline 
   environment {
     POLITE_ID = '2637511f'
-    CONTAINER_NAME = '$2637511f-web-server'
-    IMAGE_NAME = '$2637511f-temp-server-image'
+    CONTAINER_NAME = '2637511f-web-server'
+    IMAGE_NAME = '2637511f-temp-server-image'
     HOST_PORT = '32700'
   }
 
