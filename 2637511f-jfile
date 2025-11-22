@@ -11,9 +11,9 @@ pipeline {
 
   stages{
     // stage S1: release environment ready 
-    stage('${env.POLITE_ID}-S1'){
+    stage('${POLITE_ID}-S1'){
       steps {
-        echo "${env.POLITE_ID}-S1: Release environment is ready"
+        echo "${POLITE_ID}-S1: Release environment is ready"
       }
     }
 
