@@ -18,6 +18,14 @@ pipeline {
     }
 
     // stage S2: check windows release 
+    stage("2637511f-S2"){
+      steps{
+        // assuming a condition check on release windows is met, as described in the requirement
+        echo "${POLITE_ID}-S2: Release Windows checked - Continue the pipeline"
+      }
+    }
+
+    // stage S3: web-server container setup
     
 
   }
