@@ -38,6 +38,27 @@ pipeline {
         echo "${POLITE_ID}-S3: Web Server is setup and running"
       }
     }
+
+    // stage S4: parallel security scans 
+    stage("2637511f-S4"){
+      parallel{
+        // parallel step S4A
+        stage("2637511f-S4A"){
+          steps{
+            echo "${POLITE_ID}-S4A: SQL Injection (SQLi) Test - Report Generated"
+          }
+        }
+
+        // parallel step S4B
+        stage("2637511f-S4B"){
+          steps{
+            echo "${POLITE_ID}-S4B: Cross-Site Scripting (XSS) Test - Report Generated"
+          }
+        }
+      }
+    }
+
+    // stage S5: manual approval prompt 
     
 
   }
