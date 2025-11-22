@@ -1,18 +1,12 @@
-// --- configuration variables ---
-def POLITE_ID = '2637511f'
-def CONTAINER_NAME = "${POLITE_ID}-web-server"
-def IMAGE_NAME = "${POLITE_ID}-temp-server-image"
-def HOST_PORT = 32700
-
 pipeline {
   agent any
   
   // define environment variables used through the pipeline 
   environment {
-    POLITE_ID = POLITE_ID
-    CONTAINER_NAME = CONTAINER_NAME
-    IMAGE_NAME = IMAGE_NAME
-    HOST_PORT = HOST_PORT
+    POLITE_ID = '2637511f'
+    CONTAINER_NAME = '2637511f-temp-server'
+    IMAGE_NAME = '2637511f-temp-server-image'
+    HOST_PORT = '32700'
   }
 
   stages{
