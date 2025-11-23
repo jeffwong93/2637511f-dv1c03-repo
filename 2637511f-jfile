@@ -64,7 +64,7 @@ pipeline {
         script{
           def userInput = input(
               id: 'SecurityApprovalPrompt', 
-              message: 'Prompt User',
+              message: "${POLITE_ID}- Approval Step",
               ok: 'Submit',
               parameters: [
                   choice(
