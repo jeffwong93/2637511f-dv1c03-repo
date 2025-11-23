@@ -66,12 +66,12 @@ pipeline {
               id: 'SecurityApprovalPrompt', 
               
               ok: 'Submit',
-              abort: 'Cancel',
+              Abort: 'Cancel',
               parameters: [
                   choice(
                       name: 'APPROVAL_ACTION',
                       choices: ['Proceed', 'Abort'], 
-                      description: '${POLITE_ID}-S5, after checking security reports, continue the pipeline?'
+                      description: "${POLITE_ID}-S5, after checking security reports, continue the pipeline?"
                   )
               ]
           )
