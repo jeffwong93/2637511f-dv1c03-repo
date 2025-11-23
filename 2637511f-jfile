@@ -75,7 +75,7 @@ pipeline {
               ]
           )
 
-          if(userInput.APPROVAL_ACTION == 'Proceed'){
+          if(userInput['APPROVAL_ACTION'] == 'Proceed'){
             echo "2637511f-S5: Approve to continue the pipeline."
           }else{
             error("2637511f-S5: Pipeline aborted by user during approval step.")
