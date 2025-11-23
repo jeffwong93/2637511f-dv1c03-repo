@@ -64,13 +64,14 @@ pipeline {
         script{
           def userInput = input(
               id: 'SecurityApprovalPrompt', 
-              message: "${POLITE_ID}-S5, after checking security reports, continue the pipeline?",
-              ok: 'Submit Selection', 
+              
+              ok: 'Submit',
+              abort: 'Cancel',
               parameters: [
                   choice(
                       name: 'APPROVAL_ACTION',
                       choices: ['Proceed', 'Abort'], 
-                      description: 'Select whether to Proceed to the next phase or Abort the deployment.'
+                      description: '${POLITE_ID}-S5, after checking security reports, continue the pipeline?'
                   )
               ]
           )
