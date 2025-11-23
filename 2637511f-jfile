@@ -83,6 +83,13 @@ pipeline {
         }
       }
     }
+
+    // stage S6: getting ready for next phase
+    stage("2637511f-S6"){
+      steps{
+        echo "${POLITE_ID}-S6: Getting ready for next phase"
+      }
+    }
     
 
   }
