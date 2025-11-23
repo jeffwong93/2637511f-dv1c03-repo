@@ -40,7 +40,7 @@ pipeline {
     }
 
     // stage S4: parallel security scans 
-    stage("2637511f-S4"){
+    stage("2637511f-parallel-S4"){
       parallel{
         // parallel step S4A
         stage("2637511f-S4A"){
@@ -59,6 +59,30 @@ pipeline {
     }
 
     // stage S5: manual approval prompt 
+    stage("2637511f-S5"){
+      steps{
+        script{
+          def userInput = input(
+              id: 'SecurityApprovalPrompt', 
+              message: "${POLITE_ID}-S5, after checking security reports, continue the pipeline?",
+              ok: 'Submit Selection', 
+              parameters: [
+                  choice(
+                      name: 'APPROVAL_ACTION',
+                      choices: ['Proceed', 'Abort'], 
+                      description: 'Select whether to Proceed to the next phase or Abort the deployment.'
+                  )
+              ]
+          )
+
+          if(userInput.APPROVAL_ACTION == 'Proceed'){
+            echo "2637511f-S5: Approve to continue the pipeline."
+          }else{
+            error("2637511f-S5: Pipeline aborted by user during approval step.")
+          }
+        }
+      }
+    }
     
 
   }
